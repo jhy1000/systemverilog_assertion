@@ -1,3 +1,15 @@
+// Example A-3 Immediate check for mutually exclusive grants
+module my_arb(...);
+
+    always @* begin // arbiter code
+        ...
+    end
+
+    assert property （@(posedge clk) !(grant[0] &grant[1]));
+
+endmodule
+
+
 // Format1 -- Inline expression
 
 concurrent_assertion_name:
